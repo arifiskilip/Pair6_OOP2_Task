@@ -1,6 +1,6 @@
 ﻿namespace Pair6_OOP2_Task
 {
-	public class GenericRepository<TUser,TLog> : IGenericRepository<TUser>
+	public class GenericRepository<TEntity,TLog> : IGenericRepository<TEntity>
 		where TLog : ILog
 	{
 		private TLog logType;
@@ -10,7 +10,7 @@
 			this.logType = log;
 		}
 
-		public void Create(TUser user)
+		public void Create(TEntity entity)
 		{
             Console.WriteLine("Created!");
 			logType.Log();
@@ -28,7 +28,7 @@
 			logType.Log();
 		}
 
-		public void Update(TUser user)
+		public void Update(TEntity entity)
 		{
 			Console.WriteLine("Updated!");
 			logType.Log();

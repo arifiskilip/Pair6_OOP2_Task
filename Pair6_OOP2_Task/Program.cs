@@ -3,23 +3,43 @@
 User manUser = new()
 {
 	Id = 1,
-	FirstName = "Arif",
 	Gender = GenderType.Man,
-	Status = true
+	Status = true,
+	FirstName = "Arif"
 };
 
 User womenUser = new()
 {
 	Id = 2,
-	FirstName = "Gamze",
 	Gender = GenderType.Women,
-	Status = true
+	Status = true,
+	FirstName = "Gamze"
 };
 
+List<User> users = new()
+{
+	new()
+	{
+		Gender=GenderType.Man,
+		Id=2,
+		Status=false,
+	    FirstName="Ahmet",
+	},
+	manUser,
+	womenUser
+};
 
-UserManager userManager = new(new FileLog());
-userManager.Create(manUser);
+Console.WriteLine(womenUser.FirstName);
+
+UserManager userManager = new(new DataBaseLog());
+userManager.Delete(manUser.Id);
+
+BrandManager brandManager = new BrandManager(new FileLog());
+brandManager.Create(new Brand() { Id = 1 });
+
 UserCalculateManager userCalculateManager = new();
-Console.WriteLine(userCalculateManager.NumberOfUserGenders(new() { manUser, womenUser })); 
+Console.WriteLine(userCalculateManager.NumberOfUserGenders(users));
+
+
 
 

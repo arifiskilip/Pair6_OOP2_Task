@@ -1,8 +1,8 @@
 ﻿namespace Pair6_OOP2_Task
 {
-	public class UserManager : GenericRepository<User, FileLog>
+	public class UserManager : GenericRepository<User, ILog>
 	{
-		public UserManager(FileLog log) : base(log)
+		public UserManager(ILog log) : base(log)
 		{
 		}
 	}

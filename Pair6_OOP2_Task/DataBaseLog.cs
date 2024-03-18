@@ -4,6 +4,6 @@ public class DataBaseLog : ILog
 {
 	public void Log()
 	{
-        Console.WriteLine("Database logged!");
+		Console.WriteLine("Database logged!");
 	}
 }

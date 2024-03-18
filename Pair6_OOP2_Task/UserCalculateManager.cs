@@ -1,4 +1,5 @@
-﻿namespace Pair6_OOP2_Task
+﻿
+namespace Pair6_OOP2_Task
 {
 	public class UserCalculateManager : Calculate
 	{

@@ -1,9 +1,9 @@
 ﻿namespace Pair6_OOP2_Task;
 
-public interface IGenericRepository<TUser>
+public interface IGenericRepository<TEntity>
 {
 	void GetById(int id);
-	void Create(TUser user);
-	void Update(TUser user);
+	void Create(TEntity entity);
+	void Update(TEntity entity);
 	void Delete(int id);
 }
